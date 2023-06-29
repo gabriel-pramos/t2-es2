@@ -1,0 +1,29 @@
+version: '3'
+services:
+  mysql:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db
+    ports:
+      - 3306:3306
+  microservico1:
+    restart: always
+    depends_on:
+      - mysql
+    build:
+      context: ./microservico1
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+  microservico2:
+    restart: always
+    depends_on:
+      - mysql
+    build:
+      context: ./microservico2
+      dockerfile: Dockerfile
+    ports:
+      - 8081:8080
+  
