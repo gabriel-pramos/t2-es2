@@ -8,10 +8,6 @@ import org.springframework.stereotype.Service;
 import com.gabriel.es2.models.Usuario;
 import com.gabriel.es2.repositories.UsuarioRegistration;
 
-import jakarta.servlet.http.Cookie;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-
 @Service
 public class UsuarioService {
     @Autowired
