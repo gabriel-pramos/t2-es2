@@ -1,4 +1,4 @@
-package com.gabriel.es2.beans;
+package com.gabriel.es2.models;
 
 import java.util.List;
 

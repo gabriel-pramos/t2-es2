@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.gabriel.es2.beans.Disciplina;
-import com.gabriel.es2.beans.Estudante;
-import com.gabriel.es2.beans.EstudanteRegistration;
+import com.gabriel.es2.models.Disciplina;
+import com.gabriel.es2.models.Estudante;
+import com.gabriel.es2.repositories.EstudanteRegistration;
 
 @RestController
 public class EstudanteRetrieveController {

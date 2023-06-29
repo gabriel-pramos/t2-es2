@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.gabriel.es2.beans.Disciplina;
-import com.gabriel.es2.beans.DisciplinaRegistration;
-import com.gabriel.es2.beans.Estudante;
+import com.gabriel.es2.models.Disciplina;
+import com.gabriel.es2.models.Estudante;
+import com.gabriel.es2.repositories.DisciplinaRegistration;
 
 @RestController
 public class DisciplinaRetrieveController {
