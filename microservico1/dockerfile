@@ -1,30 +1,21 @@
-# FROM openjdk:17
-# WORKDIR /app
-# COPY target/microservico2-1.0.jar .
-# COPY ./keystore.p12 .
-# CMD ["java", "-jar", "microservico2-1.0.jar"]
-
-
 FROM maven:3.9.3 AS builder
 
 WORKDIR /app
 
 COPY pom.xml .
-
 RUN mvn dependency:go-offline -B
 
 COPY src ./src
-COPY keystore.p12 .
-
 RUN mvn package -DskipTests
+
 
 FROM openjdk:17
 
 WORKDIR /app
 
 COPY --from=builder /app/target/*.jar ./app.jar
-COPY --from=builder /app/keystore.p12 .
 
 EXPOSE 8080
 
 CMD ["java", "-jar", "app.jar"]
+

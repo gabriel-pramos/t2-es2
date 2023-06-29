@@ -4,8 +4,7 @@ services:
     image: mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: db
+      MYSQL_ROOT_PASSWORD: test
     ports:
       - 3306:3306
   microservico1:
