@@ -14,6 +14,10 @@ public class DisciplinaService {
     @Autowired
     private DisciplinaRegistration disciplinaRegistration;
 
+    public DisciplinaService(DisciplinaRegistration disciplinaRegistration) {
+        this.disciplinaRegistration = disciplinaRegistration;
+    }
+
     public Disciplina registerDisciplina(Disciplina disciplina) {
         disciplinaRegistration.save(disciplina);
         return disciplina;

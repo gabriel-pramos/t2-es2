@@ -15,6 +15,10 @@ public class EstudanteService {
     @Autowired
     private EstudanteRegistration estudanteRegistration;
 
+    public EstudanteService(EstudanteRegistration estudanteRegistration) {
+        this.estudanteRegistration = estudanteRegistration;
+    }
+
     public void deleteStudentRecord(String regdNum) {
         estudanteRegistration.deleteById(Integer.parseInt(regdNum));
         return;

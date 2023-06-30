@@ -20,6 +20,16 @@ public class Estudante {
 	@ManyToMany(mappedBy = "estudantes")
 	private List<Disciplina> disciplinas;
 
+	public Estudante() {
+	}
+
+	public Estudante(Integer matricula, String nome, String documento, String endereco) {
+		this.matricula = matricula;
+		this.nome = nome;
+		this.documento = documento;
+		this.endereco = endereco;
+	}
+
 	public Integer getMatricula() {
 		return this.matricula;
 	}

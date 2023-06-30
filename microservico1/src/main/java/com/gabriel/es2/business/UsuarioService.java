@@ -19,6 +19,11 @@ public class UsuarioService {
         sessoes = new java.util.HashMap<String, Usuario>();
     }
 
+    public UsuarioService(UsuarioRegistration usuarioRegistration) {
+        this.usuarioRegistration = usuarioRegistration;
+        sessoes = new java.util.HashMap<String, Usuario>();
+    }
+
     public Usuario registrar(Usuario usuario) {
         usuarioRegistration.save(usuario);
         return usuario;
