@@ -12,16 +12,19 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	@jakarta.persistence.Column(unique = true)
 	private String email;
 	private String nome;
 	private String senha;
 
-	/*public Usuario(int id, String email, String nome, String senha){
-		this.id = id;
-		this.email = email;
-		this.nome = nome;
-		this.senha = senha;
-	}*/
+	/*
+	 * public Usuario(int id, String email, String nome, String senha){
+	 * this.id = id;
+	 * this.email = email;
+	 * this.nome = nome;
+	 * this.senha = senha;
+	 * }
+	 */
 
 	public Integer getId() {
 		return this.id;
@@ -63,12 +66,12 @@ public class Usuario {
 		if (obj == null || getClass() != obj.getClass()) {
 			return false;
 		}
-		
+
 		Usuario other = (Usuario) obj;
 		return Objects.equals(id, other.id) &&
-			Objects.equals(email, other.email) &&
-			Objects.equals(nome, other.nome) &&
-			Objects.equals(senha, other.senha);
+				Objects.equals(email, other.email) &&
+				Objects.equals(nome, other.nome) &&
+				Objects.equals(senha, other.senha);
 	}
 
 }
