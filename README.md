@@ -12,3 +12,19 @@ Quando subir pela primeira vez, os serviços podem crashar por causa do banco de
 ## Collection do Postman
 
 Junto ao código, está o arquivo __"T2.postman_collection.json"__ com todas as requisições para teste da API.
+
+
+## Testes
+
+Para rodar os testes, é necessário ter o container do banco de dados rodando. Para isso, basta rodar o comando:
+
+```
+docker-compose up -d mysql
+```
+
+Após isso, basta rodar o comando:
+
+```
+DATABASE_STRING=jdbc:mysql://localhost:3306/mysql mvn -f microservico1/ test
+DATABASE_STRING=jdbc:mysql://localhost:3306/mysql mvn -f microservico2/ test
+```
